@@ -1,0 +1,47 @@
+{
+  "name": "exact-template",
+  "version": "0.0.25",
+  "main": "./src/main.js",
+  "description": "Boilerplate for isomorphic multipage Node/Express/React app",
+  "keywords": ["isomorphic", "react", "boilerplate", "express", "multipage"],
+  "repository": "github:johnnysprinkles/exact-template",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7",
+    "@babel/plugin-transform-runtime": "^7",
+    "@babel/preset-env": "^7",
+    "@babel/preset-react": "^7",
+    "@babel/register": "^7",
+    "axios": "^0.19.2",
+    "babel-loader": "^8",
+    "compression": "^1",
+    "cowsay2": "^2",
+    "emotion": "^10",
+    "emotion-server": "^10",
+    "eslint": "^6",
+    "eslint-plugin-react": "^7",
+    "express": "^5.0.0-alpha.8",
+    "glob": "^7",
+    "htmlescape": "^1.1.1",
+    "react": "^16",
+    "react-dom": "^16",
+    "react-router": "^5",
+    "react-router-dom": "^5",
+    "webpack": "^4",
+    "webpack-cli": "^3"
+  },
+  "bin": {
+    "exact-template": "./run.js"
+  },
+  "devDependencies": {
+    "concurrently": "^5",
+    "nodemon": "^2"
+  },
+  "scripts": {
+    "dev": "NODE_ENV=development NODE_OPTIONS=\"-r @babel/register\" concurrently -n webpack,node -c blue,green \"webpack --mode development --watch\" \"nodemon --watch src/\"",
+    "dev-min": "NODE_ENV=development NODE_OPTIONS=\"-r @babel/register\" concurrently -n webpack,node -c blue,green \"webpack --mode production --watch\" \"nodemon --watch src/\"",
+    "build": "npm run lint && webpack --mode production",
+    "start": "NODE_ENV=production node -r @babel/register src/main.js",
+    "lint": "eslint src"
+  }
+}
