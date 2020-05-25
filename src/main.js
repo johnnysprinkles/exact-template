@@ -20,7 +20,7 @@ let app = new express();
 // allow individual routes to handle the body as they see fit.
 app.use(compression());
 
-app.use('/static', express.static('src/public'));
+app.use('/static', express.static('public', { maxAge: 3600000 }));
 app.get('/ping', (req, res) => res.send('OK'));
 app.get('/intentional_error', (req, res) => res.send(x.y.z));
 app.get('/intentional_error_async', async (req, res) => {
