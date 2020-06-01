@@ -6,6 +6,7 @@ export default async function(req, res) {
   let cowsayPhrases = await get('cowsayPhrases');
 
   let html = render(res, CowsayView, {
+    title: 'Cowsay',
     clientBundle: bundle`apps/cowsay/cowsay-view.js`,
     props: {
       initialPhrases: cowsayPhrases,
