@@ -50,8 +50,9 @@ export default function(res, view, data = {}) {
   return String.raw`<!doctype html>
     <html>
       <head>
-        <style>${baseStylesheet}</style>
         <title>${data.title || ''}</title>
+        <link rel="icon" type="image/png" href="/static/favicon.png">
+        <style>${baseStylesheet}</style>
         <link href="/static/fontawesome/css/all.min.css" rel="stylesheet">
       </head>
       <body>
