@@ -9,10 +9,10 @@ let style = {
     max-width: 1000px;
     display: flex;
 
-
     dt {
       font-weight: bold;
     }
+
     dd {
       margin-bottom: 1.5em;
     }
@@ -56,7 +56,7 @@ export default function DocsFaqView(props) {
         <div className={style.right}>
           <h3>FAQ</h3>
           <dl>
-            <dt>What about Next.js?</dt>
+            <dt id="nextjs">What about Next.js?</dt>
             <dd>
               <p>
                 Just different approaches. Next.js kind of steers you away from
@@ -105,7 +105,33 @@ export default function DocsFaqView(props) {
                 </tbody>
               </table>
             </dd>
-            <dt>Why Emotion?</dt>
+            <dt id="who_for">Who is this for?</dt>
+            <dd>
+              <p>
+                This is a somewhat heavy-weight solution, really intended
+                for apps that might get fairly large and that typically run in
+                a corporate environment. The app-manager.js is a light layer
+                on top of Express, which is itself just a light layer on top of
+                the http standard library, so you aren't overly encumbered by
+                abstractions. You can do anything you want at the server-side
+                level, including in-process TLS, reverse proxying to legacy
+                front-end services, and recording access and error logs to disk
+                or to some streaming service. 
+              </p>
+              <p>
+                This probably wouldn't be a good choice for most toy apps, or
+                for purely client-side developers that don't have experience
+                with operations and service ownership.
+              </p>
+              <p>
+                Really I made this for myself, to have the superpower of being
+                able to spin up React web apps instantly, be it for personal
+                projects, or for internal tools at whatever company I happen to
+                be working for, or even for high traffic customer-facing
+                websites.
+              </p>
+            </dd>
+            <dt id="emotion">Why Emotion?</dt>
             <dd>
               <p>
                 You can swap that out with <code>styled-components</code> or whatever you like, it's just
@@ -121,7 +147,7 @@ export default function DocsFaqView(props) {
                 example you never do.
               </p>
             </dd>
-            <dt>Isn't Express 5 still in alpha?</dt>
+            <dt id="express5">Isn't Express 5 still in alpha?</dt>
             <dd>
               <p>
                 Yes but I've been using it in production for over a year and half.
@@ -129,7 +155,7 @@ export default function DocsFaqView(props) {
                 at this point.
               </p>
             </dd>
-            <dt>What about the const mafia?</dt>
+            <dt id="const_mafia">What about the const mafia?</dt>
             <dd>
               <p>
                 If you really think it's important, every time you declare an implementation variable,
@@ -140,7 +166,7 @@ export default function DocsFaqView(props) {
                 pretty pointless. 
               </p>
             </dd>
-            <dt>Why is the JS just inlined?</dt>
+            <dt id="inlined_js">Why is the JS just inlined?</dt>
             <dd>
               <p>
                 This keeps the HTML and JS in sync when you deploy across a
